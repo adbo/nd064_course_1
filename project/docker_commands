@@ -1,11 +1,31 @@
 ## Docker commands used to build the application 
-# TODO: insert the docker build command
+docker build -t techtrends .
 
 ## Docker commands used to run the application
-# TODO: insert the docker run command
+docker run -d -p 7111:3111 techtrends
 
 ## Docker commands used to get the application logs
-# TODO: insert the docker logs command
+# get the container id
+docker ps
+# get the logs from the container
+docker logs 4bb1a7770ab3
 
 ## Logs from the container running the TechTrends application
-# TODO: paste logs from the Docker container 
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+INFO:werkzeug:2021-06-20 11:52:51,651,  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:2021-06-20 11:53:07,062, 172.17.0.1 - - [20/Jun/2021 11:53:07] "GET / HTTP/1.1" 200 -
+INFO:app:2021-06-20 11:53:10,748, Article "2020 CNCF Annual Report" retrived!
+INFO:werkzeug:2021-06-20 11:53:10,752, 172.17.0.1 - - [20/Jun/2021 11:53:10] "GET /1 HTTP/1.1" 200 -
+INFO:app:2021-06-20 11:53:13,414, Page "About us" retrived!
+INFO:werkzeug:2021-06-20 11:53:13,417, 172.17.0.1 - - [20/Jun/2021 11:53:13] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:2021-06-20 11:53:14,336, 172.17.0.1 - - [20/Jun/2021 11:53:14] "GET /create HTTP/1.1" 200 -
+INFO:app:2021-06-20 11:53:21,819, Article "post title" is created!
+INFO:werkzeug:2021-06-20 11:53:21,821, 172.17.0.1 - - [20/Jun/2021 11:53:21] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:2021-06-20 11:53:21,829, 172.17.0.1 - - [20/Jun/2021 11:53:21] "GET / HTTP/1.1" 200 -
+INFO:app:2021-06-20 11:53:26,507, Article with id: 100 not found!
+INFO:werkzeug:2021-06-20 11:53:26,511, 172.17.0.1 - - [20/Jun/2021 11:53:26] "GET /100 HTTP/1.1" 404 -
+
